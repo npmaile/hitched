@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/text-to-svg": "^3.1.4",
+    "animejs": "^4.0.2",
     "vite": "^6.3.5",
     "vite-imagetools": "^7.1.0"
+  },
+  "dependencies": {
+    "text-to-svg": "^3.1.5"
   }
 }
