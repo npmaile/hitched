@@ -1,0 +1,15 @@
+[Unit]
+Description=Hitched wedding site
+After=network.target
+
+[Service]
+Type=simple
+User=hitched
+Group=hitched
+WorkingDirectory=/opt/hitched
+ExecStart=/opt/hitched/hitched -addr :8080 -db /opt/hitched/rsvps.db
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
