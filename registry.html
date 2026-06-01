@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registry — Nate & Susanna</title>
+<meta name="description" content="No traditional registry here. Nate & Susanna would love handmade art from the people they love. Ideas from $0 to $250 inside.">
+<meta property="og:title" content="Registry — Nate & Susanna's Wedding">
+<meta property="og:description" content="Skip the registry. Make us something. Ideas for handmade gifts ranging from easy and free to ambitious and beautiful.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Registry — Nate & Susanna's Wedding">
+<meta name="twitter:description" content="Skip the registry. Make us something. Ideas for handmade gifts ranging from easy and free to ambitious and beautiful.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --lime: #c8f135;
+  --coral: #ff5e3a;
+  --sky: #4fc3f7;
+  --violet: #b388ff;
+  --pink: #ff80ab;
+  --yellow: #ffe033;
+  --white: #fffef9;
+  --ink: #1a1008;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.site-nav {
+  background: var(--ink);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2.5px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+.site-nav a {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,254,249,0.55);
+  text-decoration: none;
+  padding: 14px 16px 14px 0;
+  border-right: 1px solid rgba(255,254,249,0.12);
+  margin-right: 16px;
+  transition: color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-nav a:first-child { padding-left: 0; }
+.site-nav a:last-child { border-right: none; margin-right: 0; padding-right: 20px; }
+.site-nav a:hover, .site-nav a.active { color: var(--lime); }
+
+/* ── HERO STATEMENT ── */
+.statement {
+  background: var(--coral);
+  border-bottom: 2.5px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+}
+@media(max-width:680px){
+  .statement { grid-template-columns: 1fr; }
+  .statement-deco { display: none; }
+}
+.statement-body {
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 2.5px solid var(--ink);
+}
+.section-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 6px 14px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+.statement-heading {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 6vw, 66px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.97;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.statement-body p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,254,249,0.88);
+  max-width: 420px;
+}
+.statement-body p + p { margin-top: 14px; }
+.statement-body strong {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.statement-deco {
+  background: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.deco-big {
+  font-size: clamp(100px, 14vw, 160px);
+  line-height: 1;
+  user-select: none;
+  filter: drop-shadow(0 4px 0 rgba(26,16,8,0.15));
+}
+.deco-shape {
+  position: absolute;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.deco-shape-1 { width: 110px; height: 110px; background: var(--yellow); top: 10%; right: 8%; }
+.deco-shape-2 { width: 60px;  height: 60px;  background: var(--lime);   bottom: 15%; left: 10%; }
+
+/* ── TIER INTRO ── */
+.tier-intro {
+  padding: 72px 40px 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media(max-width:560px){ .tier-intro { padding: 48px 20px 0; } }
+
+.tier-intro-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  border-bottom: 2.5px solid var(--ink);
+  padding-bottom: 32px;
+  flex-wrap: wrap;
+}
+.tier-intro-inner h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+.tier-intro-inner p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(26,16,8,0.55);
+  letter-spacing: 0.04em;
+}
+
+/* ── ART ITEMS ── */
+.art-list {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+  border-left: none;
+}
+@media(max-width:560px){ .art-list { padding: 0 20px 60px; } }
+
+.art-item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 0;
+  border-bottom: 2.5px solid var(--ink);
+  align-items: stretch;
+  transition: background 0.15s;
+}
+.art-item:hover { background: var(--yellow); }
+
+.art-num {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(26,16,8,0.3);
+  padding: 28px 0 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2.5px solid var(--ink);
+}
+
+.art-body {
+  padding: 28px 28px 28px 28px;
+  border-right: 2.5px solid var(--ink);
+}
+
+.art-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+
+.art-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(26,16,8,0.65);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.art-meta {
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  min-width: 130px;
+}
+
+.art-price {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.art-difficulty {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 4px 10px;
+  border: 1.5px solid var(--ink);
+  white-space: nowrap;
+}
+.diff-easy   { background: var(--lime);   }
+.diff-medium { background: var(--yellow); }
+.diff-hard   { background: var(--coral);  color: var(--white); }
+
+.art-emoji {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+@media(max-width:560px){
+  .art-item { grid-template-columns: 40px 1fr; }
+  .art-meta { display: none; }
+  .art-body { border-right: none; }
+  .art-num  { font-size: 10px; }
+}
+
+/* ── CLOSER ── */
+.closer {
+  background: var(--lime);
+  border-top: 2.5px solid var(--ink);
+  padding: 60px 40px;
+  text-align: center;
+}
+.closer h3 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.closer p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(26,16,8,0.6);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 48px 24px 60px;
+  background: var(--ink);
+  color: var(--white);
+}
+footer .f-names {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--lime);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+footer p {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,254,249,0.4);
+  font-weight: 300;
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">Home</a>
+  <a href="hotels.html">Hotels & Lodging</a>
+  <a href="registry.html" class="active">Registry</a>
+</nav>
+
+<!-- STATEMENT -->
+<div class="statement">
+  <div class="statement-body">
+    <div class="section-tag">Our Registry</div>
+    <h1 class="statement-heading">Skip the<br>registry.<br>Make us<br>something.</h1>
+    <p>
+      We have enough stuff. What we don't have nearly enough of is <strong>art made by people we love.</strong>
+    </p>
+    <p>
+      A drawing, a painting, a photograph, a poem written on a napkin. Any of it will mean more to us than anything from a store. Our home should feel like it was made by the people in our lives, and you're one of them.
+    </p>
+    <p>
+      If you're not sure where to start, we made a list of ideas below, from beginner-friendly to go-all-out.
+    </p>
+  </div>
+  <div class="statement-deco" aria-hidden="true">
+    <div class="deco-shape deco-shape-1"></div>
+    <div class="deco-shape deco-shape-2"></div>
+    <div class="deco-big">🎨</div>
+  </div>
+</div>
+
+<!-- LIST -->
+<div class="tier-intro">
+  <div class="tier-intro-inner">
+    <h2>Ideas &amp; inspiration</h2>
+    <p>Roughly ordered from easiest to most ambitious. Honestly though, any effort counts.</p>
+  </div>
+</div>
+
+<div class="art-list">
+
+  <div class="art-item">
+    <div class="art-num">01</div>
+    <div class="art-body">
+      <div class="art-title">A handwritten letter or poem</div>
+      <div class="art-desc">Write us something. A memory, a wish, a terrible limerick. Whatever you want. We'll frame it.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">✍️</div>
+      <div class="art-price">~$0</div>
+      <div class="art-difficulty diff-easy">Easy</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">02</div>
+    <div class="art-body">
+      <div class="art-title">A pressed flower arrangement</div>
+      <div class="art-desc">Pick flowers, press them in a book for a week, arrange them on cardstock or in a frame. Simple and beautiful.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🌸</div>
+      <div class="art-price">~$10</div>
+      <div class="art-difficulty diff-easy">Easy</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">03</div>
+    <div class="art-body">
+      <div class="art-title">A printed photo of you and us</div>
+      <div class="art-desc">Pick a favorite photo of the three (or more) of you, get it printed big, and drop it in a nice frame. Done.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">📷</div>
+      <div class="art-price">~$20</div>
+      <div class="art-difficulty diff-easy">Easy</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">04</div>
+    <div class="art-body">
+      <div class="art-title">A watercolor painting</div>
+      <div class="art-desc">Grab a cheap watercolor set and paint anything: a place we both love, our dog, an abstract blob. Beginner work is charming, not embarrassing, we promise.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🎨</div>
+      <div class="art-price">~$25</div>
+      <div class="art-difficulty diff-easy">Easy</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">05</div>
+    <div class="art-body">
+      <div class="art-title">A hand-thrown or hand-built ceramic piece</div>
+      <div class="art-desc">Many pottery studios offer open studio time or one-day workshops. Make us a mug, a bowl, a lopsided vase. We will use it every day.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🏺</div>
+      <div class="art-price">~$40</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">06</div>
+    <div class="art-body">
+      <div class="art-title">An embroidered hoop or textile piece</div>
+      <div class="art-desc">Embroider our names, a date, a flower, a little scene. Hoop art is beginner-friendly and ends up looking incredible hung on a wall.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🧵</div>
+      <div class="art-price">~$40</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">07</div>
+    <div class="art-body">
+      <div class="art-title">A screen print or linocut print</div>
+      <div class="art-desc">Carve a simple image into a linoleum block and print it on paper or fabric. Many print shops offer one-day intro classes. Edition of one, just for us.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🖨️</div>
+      <div class="art-price">~$60</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">08</div>
+    <div class="art-body">
+      <div class="art-title">A framed original drawing or illustration</div>
+      <div class="art-desc">Draw us something: a portrait, a pet, a place, something weird. Ink, pencil, marker, charcoal. Frame it nicely and it becomes a real piece of art.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🖊️</div>
+      <div class="art-price">~$60</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">09</div>
+    <div class="art-body">
+      <div class="art-title">A hand-bound journal or book</div>
+      <div class="art-desc">Bookbinding kits are widely available and the results are stunning. Fill it with blank pages for one of us to write in, or fill it yourself with notes, memories, and photos.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">📖</div>
+      <div class="art-price">~$80</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">10</div>
+    <div class="art-body">
+      <div class="art-title">A large acrylic or oil painting</div>
+      <div class="art-desc">Abstract, landscape, portrait, anything goes. Even if you've never painted before, a large piece with intentional color choices will look stunning above a couch.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🖼️</div>
+      <div class="art-price">~$100</div>
+      <div class="art-difficulty diff-medium">Medium</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">11</div>
+    <div class="art-body">
+      <div class="art-title">A hand-welded or woodworked object</div>
+      <div class="art-desc">A small shelf, a coat hook, a sculptural piece in metal or wood. If you make things with your hands, make us something. We will treasure it.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🔨</div>
+      <div class="art-price">~$120</div>
+      <div class="art-difficulty diff-hard">Hard</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">12</div>
+    <div class="art-body">
+      <div class="art-title">A commissioned song or recording</div>
+      <div class="art-desc">Write and record a song about us, for us. Sincere, a roast, ideally both. A voice memo on your phone counts. A produced track is incredible.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🎵</div>
+      <div class="art-price">~$150</div>
+      <div class="art-difficulty diff-hard">Hard</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">13</div>
+    <div class="art-body">
+      <div class="art-title">A hand-woven textile or tapestry</div>
+      <div class="art-desc">A woven wall hanging, a small rug, a lap blanket. Weaving is meditative and the finished piece looks incredible. It's a real commitment, and we know it. That's exactly why it would mean so much.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🧶</div>
+      <div class="art-price">~$200</div>
+      <div class="art-difficulty diff-hard">Hard</div>
+    </div>
+  </div>
+
+  <div class="art-item">
+    <div class="art-num">14</div>
+    <div class="art-body">
+      <div class="art-title">A large-scale portrait or mural painting</div>
+      <div class="art-desc">A serious, finished painting of us, our home, somewhere meaningful, or something entirely your own. Big canvas, real effort. The kind of thing we put above the fireplace and explain to every person who visits for the rest of our lives.</div>
+    </div>
+    <div class="art-meta">
+      <div class="art-emoji">🎭</div>
+      <div class="art-price">~$250</div>
+      <div class="art-difficulty diff-hard">Hard</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CLOSER -->
+<div class="closer">
+  <h3>Truly, anything counts.</h3>
+  <p>The effort is the gift. Show up, make something with your hands (or your words), and know that it will live in our home. That matters more to us than anything on a shelf.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-names">Nate & Susanna Maile</div>
+  <p>August 15, 2025 · The Supermarket · Atlanta, Georgia</p>
+</footer>
+
+</body>
+</html>

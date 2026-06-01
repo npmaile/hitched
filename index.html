@@ -1,39 +1,931 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>
-		Official Nate and Susanna wedding page!
-	</title>
-	<meta property="og:title" content="Official Nate and Susanna Wedding Page" />
-	<meta property="og:url" content="https://l8rsn8r.vip" />
-	<meta property="og:description"
-		content="Wedding website to celebrate the holy matrimony of Susanna J. Diamond and Nathaniel P Maile" />
-	<meta id="meta-image" property="og:image" content="/og-photo.jpg" />
-	<style>
-		:root {
-			color-scheme: light dark;
-		}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nate & Susanna: Wedding Reception</title>
+<meta name="description" content="You're invited to celebrate the wedding of Nate & Susanna Maile. Saturday, August 15, 2025 at The Supermarket in Atlanta, GA. Doors open at 3:00 PM.">
+<meta property="og:title" content="Nate & Susanna: Wedding Reception">
+<meta property="og:description" content="You're invited! Join us on August 15, 2025 at The Supermarket in Atlanta, GA to celebrate Nate & Susanna Maile.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nate & Susanna: Wedding Reception">
+<meta name="twitter:description" content="You're invited! Join us on August 15, 2025 at The Supermarket in Atlanta, GA to celebrate Nate & Susanna Maile.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-		p {
-			font-family: Arial;
-			font-size: 40;
-		}
-	</style>
+:root {
+  --lime: #c8f135;
+  --coral: #ff5e3a;
+  --sky: #4fc3f7;
+  --violet: #b388ff;
+  --pink: #ff80ab;
+  --yellow: #ffe033;
+  --white: #fffef9;
+  --ink: #1a1008;
+}
 
+html { scroll-behavior: smooth; }
 
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── MARQUEE BANNER ── */
+.marquee-wrap {
+  background: var(--lime);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2.5px solid var(--ink);
+}
+.marquee-inner {
+  display: inline-block;
+  animation: marquee 18s linear infinite;
+}
+.marquee-inner span {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 0 28px;
+}
+.marquee-inner span.dot { color: var(--coral); padding: 0; font-size: 18px; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2.5px solid var(--ink);
+  position: relative;
+}
+
+.hero-left {
+  padding: 60px 48px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+  border-right: 2.5px solid var(--ink);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-right {
+  background: var(--coral);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-right-inner {
+  text-align: center;
+  padding: 40px;
+}
+
+.big-date {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(60px, 10vw, 110px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--white);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.big-date-sub {
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,254,249,0.7);
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* floating shapes */
+.shape { position: absolute; pointer-events: none; }
+.shape-circle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink);
+  background: var(--yellow);
+  top: 12%; right: 8%;
+}
+.shape-blob {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 2.5px solid var(--ink);
+  bottom: 18%; left: 10%;
+}
+.shape-star {
+  font-size: 64px;
+  bottom: 12%; right: 12%;
+  color: var(--pink);
+  line-height: 1;
+}
+
+@media(max-width:640px){
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--coral);
+  margin-bottom: 20px;
+}
+
+.hero-names {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.hero-names em {
+  font-style: italic;
+  color: var(--coral);
+}
+
+.hero-amp {
+  display: block;
+  font-size: 0.55em;
+  font-style: italic;
+  color: var(--violet);
+  margin: 4px 0;
+}
+
+.hero-pill {
+  display: inline-block;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 32px;
+}
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 80px 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 6px 14px;
+  margin-bottom: 40px;
+}
+
+/* ── DETAILS CARDS ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border: 2.5px solid var(--ink);
+}
+
+.card {
+  padding: 36px 28px;
+  border-right: 2.5px solid var(--ink);
+  position: relative;
+  transition: transform 0.15s;
+}
+.card:last-child { border-right: none; }
+.card:hover { transform: translateY(-3px); z-index: 2; }
+
+.card:nth-child(1) { background: var(--sky); }
+.card:nth-child(2) { background: var(--lime); }
+.card:nth-child(3) { background: var(--pink); }
+
+.card-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(26,16,8,0.55);
+  margin-bottom: 14px;
+}
+
+.card-main {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.card-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(26,16,8,0.7);
+  line-height: 1.5;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.6; }
+
+/* ── RSVP ── */
+.rsvp-outer {
+  background: var(--violet);
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 2.5px solid var(--ink);
+  padding: 80px 40px;
+}
+
+.rsvp-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.rsvp-heading {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.rsvp-sub {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: rgba(26,16,8,0.6);
+  margin-bottom: 40px;
+}
+
+.rsvp-box {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  padding: 40px 36px;
+}
+
+@media(max-width:560px){
+  .rsvp-box { padding: 28px 20px; }
+  .rsvp-outer { padding: 60px 20px; }
+  .section { padding: 60px 20px; }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media(max-width:520px){ .form-row { grid-template-columns: 1fr; } }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(26,16,8,0.55);
+}
+
+.field input,
+.field textarea {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 14px;
+  color: var(--ink);
+  outline: none;
+  border-radius: 0;
+  transition: background 0.15s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.field input:focus,
+.field textarea:focus { background: var(--lime); }
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(26,16,8,0.3); }
+.field textarea { resize: vertical; min-height: 72px; }
+
+.att-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+@media(max-width:520px){ .att-row { grid-template-columns: 1fr 1fr; } }
+
+.att-btn {
+  padding: 11px 10px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  line-height: 1.3;
+}
+.att-btn:hover { background: var(--yellow); }
+.att-btn.active { background: var(--lime); border-color: var(--ink); }
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--coral);
+  border: 2px solid var(--ink);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.15s;
+}
+.submit-btn:hover { background: var(--ink); letter-spacing: 0.38em; }
+.submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+.success-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  display: block;
+}
+.success-msg h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.success-msg p {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(26,16,8,0.55);
+  font-weight: 300;
+}
+
+/* ── NAV BAR ── */
+.site-nav {
+  background: var(--ink);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 2.5px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+.site-nav a {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,254,249,0.55);
+  text-decoration: none;
+  padding: 14px 16px 14px 0;
+  border-right: 1px solid rgba(255,254,249,0.12);
+  margin-right: 16px;
+  transition: color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-nav a:first-child { padding-left: 0; }
+.site-nav a:last-child { border-right: none; margin-right: 0; padding-right: 20px; }
+.site-nav a:hover, .site-nav a.active { color: var(--lime); }
+
+/* ── VENUE MAP ── */
+.map-section {
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 2.5px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+@media(max-width:640px){
+  .map-section { grid-template-columns: 1fr; }
+  .map-info { border-right: none !important; border-bottom: 2.5px solid var(--ink); }
+}
+.map-info {
+  background: var(--yellow);
+  padding: 52px 40px;
+  border-right: 2.5px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.map-info .section-tag { margin-bottom: 24px; }
+.map-address-main {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.map-address-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(26,16,8,0.65);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.map-actions { display: flex; flex-direction: column; gap: 10px; }
+.map-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.15s;
+  width: fit-content;
+}
+.map-action-btn:hover { background: var(--ink); color: var(--white); }
+.map-frame-wrap {
+  position: relative;
+  height: 380px;
+}
+@media(max-width:640px){
+  .map-frame-wrap { height: 300px; }
+}
+.map-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 48px 24px 60px;
+  background: var(--ink);
+  color: var(--white);
+}
+footer .f-names {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--lime);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+footer p {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,254,249,0.4);
+  font-weight: 300;
+}
+
+/* ── EMOJI ANIMATION ── */
+.emoji-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+.e-piece {
+  position: absolute;
+  font-size: 28px;
+  line-height: 1;
+  will-change: transform, opacity;
+  user-select: none;
+}
+@keyframes confetti-fall {
+  0%   { transform: translateY(-60px) rotate(0deg) scale(1);   opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg) scale(0.6); opacity: 0; }
+}
+@keyframes confetti-burst {
+  0%   { transform: translate(0,0) rotate(0deg) scale(0.4); opacity: 1; }
+  60%  { opacity: 1; }
+  100% { transform: translate(var(--bx), var(--by)) rotate(540deg) scale(1); opacity: 0; }
+}
+@keyframes rain-fall {
+  0%   { transform: translateY(-40px) rotate(-15deg); opacity: 1; }
+  85%  { opacity: 0.9; }
+  100% { transform: translateY(105vh) rotate(-15deg); opacity: 0; }
+}
+@keyframes ghost-rise {
+  0%   { transform: translateY(0) scale(0.8); opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* ── FADE IN ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-left > * {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+.eyebrow    { animation-delay: 0.05s; }
+.hero-names { animation-delay: 0.18s; }
+.hero-pill  { animation-delay: 0.32s; }
+</style>
 </head>
-
 <body>
-	<p>
-		Nate and Susanna are getting married!
-		<br>
-		stay tuned for more info!
-		<br>
-		<a href="https://www.amazon.com/wedding/share/SN8HITCHED">registry</a>
-	<p>
 
-		<script type="module" src="./index.tsx"></script>
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="hotels.html">Hotels & Lodging</a>
+  <a href="registry.html">Registry</a>
+</nav>
+
+<!-- MARQUEE BANNER -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>Nate & Susanna</span><span class="dot">✦</span>
+    <span>August 15th</span><span class="dot">✦</span>
+    <span>The Supermarket</span><span class="dot">✦</span>
+    <span>Atlanta, GA</span><span class="dot">✦</span>
+    <span>We got married!</span><span class="dot">✦</span>
+    <span>Nate & Susanna</span><span class="dot">✦</span>
+    <span>August 15th</span><span class="dot">✦</span>
+    <span>The Supermarket</span><span class="dot">✦</span>
+    <span>Atlanta, GA</span><span class="dot">✦</span>
+    <span>We're getting married!</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="eyebrow">You're cordially invited</p>
+    <h1 class="hero-names">
+      Nate
+      <span class="hero-amp">&amp;</span>
+      <em>Susanna</em>
+    </h1>
+    <div class="hero-pill">Wedding Reception 🎉</div>
+  </div>
+
+  <div class="hero-right" aria-hidden="true">
+    <div class="shape shape-circle"></div>
+    <div class="shape shape-blob"></div>
+    <div class="shape shape-star">★</div>
+    <div class="hero-right-inner">
+      <div class="big-date">Aug<br>15</div>
+      <p class="big-date-sub">3:00 PM · Atlanta</p>
+    </div>
+  </div>
+</div>
+
+<!-- DETAILS SECTION -->
+<section class="section" aria-labelledby="details-lbl">
+  <div class="section-tag" id="details-lbl">The Details</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Date & Time</div>
+      <div class="card-main">August 15</div>
+      <div class="card-sub">Saturday, 2025<br>Doors open at 3:00 PM</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Venue</div>
+      <div class="card-main">The Supermarket</div>
+      <div class="card-sub">638 N. Highland Ave NE<br>Atlanta, GA 30306</div>
+      <a class="map-link" href="https://maps.google.com/?q=638+N+Highland+Ave+NE+Atlanta+GA+30306" target="_blank" rel="noopener">↗ Get directions</a>
+    </div>
+    <div class="card">
+      <div class="card-label">Dress Code</div>
+      <div class="card-main">Casual</div>
+      <div class="card-sub">Come as you are.<br>Just come happy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE MAP -->
+<div class="map-section">
+  <div class="map-info">
+    <div class="section-tag">Find Us</div>
+    <div class="map-address-main">The Supermarket</div>
+    <div class="map-address-sub">638 N. Highland Ave NE<br>Atlanta, GA 30306<br>Virginia-Highland neighborhood</div>
+    <div class="map-actions">
+      <a class="map-action-btn" href="https://maps.google.com/?q=638+N+Highland+Ave+NE+Atlanta+GA+30306" target="_blank" rel="noopener">↗ Google Maps</a>
+      <a class="map-action-btn" href="https://maps.apple.com/?q=638+N+Highland+Ave+NE+Atlanta+GA+30306" target="_blank" rel="noopener">↗ Apple Maps</a>
+      <a class="map-action-btn" href="hotels.html">→ Nearby Hotels</a>
+    </div>
+  </div>
+  <div class="map-frame-wrap">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-84.3630%2C33.7666%2C-84.3430%2C33.7766&layer=mapnik&marker=33.77163534989877%2C-84.35295692457922"
+      title="Venue map: The Supermarket, Atlanta"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- RSVP SECTION -->
+<div class="rsvp-outer">
+  <div class="rsvp-inner">
+    <h2 class="rsvp-heading">Are you<br>coming?!</h2>
+    <p class="rsvp-sub">Please respond by August 1st</p>
+    <div class="rsvp-box">
+      <div id="rsvp-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" placeholder="First">
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" placeholder="Last">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com">
+          </div>
+          <div class="field">
+            <label for="guests">Additional guests</label>
+            <input type="number" id="guests" min="0" max="10" placeholder="0" value="0">
+          </div>
+        </div>
+        <div class="field">
+          <label>Will you be there?</label>
+          <div class="att-row">
+            <button class="att-btn active" data-val="yes" onclick="selectAtt(this)">✓ Joyfully accept</button>
+            <button class="att-btn" data-val="yes" onclick="selectAtt(this)">✓ Ecstatically accept</button>
+            <button class="att-btn" data-val="yes" onclick="selectAtt(this)">✓ Reluctantly accept</button>
+            <button class="att-btn" data-val="yes" onclick="selectAtt(this)">✓ Regretfully accept</button>
+            <button class="att-btn" data-val="yes" onclick="selectAtt(this)">✓ Desperately accept</button>
+            <button class="att-btn" data-val="maybe" onclick="selectAtt(this)">? There in spirit</button>
+            <button class="att-btn" data-val="no" onclick="selectAtt(this)">✗ Regretfully decline</button>
+            <button class="att-btn" data-val="no" onclick="selectAtt(this)">✗ Tearfully decline</button>
+            <button class="att-btn" data-val="no" onclick="selectAtt(this)">✗ Gleefully decline</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="dietary">Notes (dietary needs, questions, anything!)</label>
+          <textarea id="dietary" placeholder="Tell us anything you'd like us to know..."></textarea>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Send RSVP →</button>
+      </div>
+
+      <!-- Success state shown after form submission -->
+      <div class="success-msg" id="success-msg">
+        <span class="success-icon">🎊</span>
+        <h3 id="success-heading">See you there!</h3>
+        <p id="success-sub">Thanks for letting us know. We can't wait to celebrate with you.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-names">Nate & Susanna Maile</div>
+  <p>August 15, 2025 · The Supermarket · Atlanta, Georgia</p>
+</footer>
+
+<script>
+  function launchEmojis(type) {
+    const layer = document.createElement('div');
+    layer.className = 'emoji-layer';
+    document.body.appendChild(layer);
+
+    const sets = {
+      yes:   ['🎉','🎊','✨','🌟','💛','🎈','🥂','💐','🎶','💫'],
+      no:    ['🌧️','💧','☁️','😢','🥀','⛈️','🌩️','😭','🌂','💔'],
+      maybe: ['👻','✨','💫','🌫️','🕯️','🌙','⭐','👁️','🤍','🫧'],
+    };
+    const emojis = sets[type] || sets.yes;
+    const count = type === 'no' ? 55 : 60;
+
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('span');
+      el.className = 'e-piece';
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      if (type === 'no' || type === 'maybe') {
+        // rain / ghost: start across top (or bottom for ghosts), fall/rise
+        el.style.left = Math.random() * 110 - 5 + 'vw';
+        if (type === 'maybe') {
+          el.style.bottom = Math.random() * 20 + 'vh';
+          el.style.top = 'auto';
+        } else {
+          el.style.top = '-60px';
+        }
+        const dur = 1.8 + Math.random() * 2.2;
+        const delay = Math.random() * 1.8;
+        const anim = type === 'maybe' ? 'ghost-rise' : 'rain-fall';
+        el.style.animation = `${anim} ${dur}s ${delay}s ease-in forwards`;
+        el.style.fontSize = 18 + Math.random() * 18 + 'px';
+      } else {
+        // confetti: burst from random point near click, then drift down
+        const cx = 20 + Math.random() * 60;
+        const cy = 25 + Math.random() * 40;
+        el.style.left = cx + 'vw';
+        el.style.top  = cy + 'vh';
+        const angle = Math.random() * Math.PI * 2;
+        const dist  = 15 + Math.random() * 35;
+        el.style.setProperty('--bx', Math.cos(angle) * dist + 'vw');
+        el.style.setProperty('--by', Math.sin(angle) * dist + 'vh');
+        const dur   = 0.9 + Math.random() * 0.8;
+        const delay = Math.random() * 0.6;
+        el.style.animation = `confetti-burst ${dur}s ${delay}s cubic-bezier(.2,.8,.4,1) forwards`;
+        el.style.fontSize  = 20 + Math.random() * 16 + 'px';
+      }
+
+      layer.appendChild(el);
+    }
+
+    setTimeout(() => layer.remove(), 5000);
+  }
+
+  let attendance = 'yes';
+
+  function selectAtt(btn) {
+    document.querySelectorAll('.att-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    attendance = btn.dataset.val;
+  }
+
+  async function submitRSVP() {
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const guests  = document.getElementById('guests').value;
+    const dietary = document.getElementById('dietary').value.trim();
+
+    // Reset border colors
+    document.getElementById('fname').style.borderColor = '';
+    document.getElementById('email').style.borderColor = '';
+
+    // Basic validation
+    if (!fname || !email) {
+      if (!fname) document.getElementById('fname').style.borderColor = '#ff5e3a';
+      if (!email) document.getElementById('email').style.borderColor = '#ff5e3a';
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const payload = {
+      first_name: fname,
+      last_name: lname,
+      email,
+      additional_guests: parseInt(guests) || 0,
+      attending: attendance,        // "yes" or "no"
+      dietary_notes: dietary,
+      submitted_at: new Date().toISOString()
+    };
+
+    try {
+      // TODO: replace '/api/rsvp' with your actual backend endpoint
+      const res = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok || res.status === 201) {
+        launchEmojis(attendance);
+        showSuccess(fname);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      launchEmojis(attendance);
+      showSuccess(fname);
+    }
+  }
+
+  function showSuccess(fname) {
+    document.getElementById('rsvp-form').style.display = 'none';
+    const msg = document.getElementById('success-msg');
+    msg.style.display = 'block';
+    const icon = document.querySelector('.success-icon');
+    const heading = document.getElementById('success-heading');
+    const sub = document.getElementById('success-sub');
+    if (attendance === 'no') {
+      const btn = document.querySelector('.att-btn.active');
+      const label = btn ? btn.textContent.toLowerCase() : '';
+      if (label.includes('gleefully')) {
+        icon.textContent = '😈';
+        heading.textContent = "Wow. Okay then.";
+        sub.textContent = "We see how it is. We'll try not to have too much fun without you.";
+      } else if (label.includes('tearfully')) {
+        icon.textContent = '😢';
+        heading.textContent = "We're crying too.";
+        sub.textContent = "Truly a tragedy. We'll save you a piece of cake in our hearts.";
+      } else {
+        icon.textContent = '💛';
+        heading.textContent = "You'll be missed!";
+        sub.textContent = "Thanks for letting us know. We hope to see you soon.";
+      }
+    } else if (attendance === 'maybe') {
+      icon.textContent = '👻';
+      heading.textContent = "A spiritual presence!";
+      sub.textContent = "We'll set out a candle for you. Or a snack. Probably a snack.";
+    } else {
+      const btn = document.querySelector('.att-btn.active');
+      const label = btn ? btn.textContent.toLowerCase() : '';
+      if (label.includes('reluctantly')) {
+        icon.textContent = '😬';
+        heading.textContent = "We'll take it!";
+        sub.textContent = "Your reluctant presence is our greatest honor. See you there.";
+      } else if (label.includes('regretfully accept')) {
+        icon.textContent = '😅';
+        heading.textContent = "Bold of you to admit it.";
+        sub.textContent = "We respect the honesty. We'll make it worth your while, promise.";
+      } else if (label.includes('desperately')) {
+        icon.textContent = '🥹';
+        heading.textContent = "We feel that energy.";
+        sub.textContent = "Your desperation is valid and deeply appreciated. See you there!";
+      } else {
+        icon.textContent = '🎊';
+        heading.textContent = "See you there!";
+        sub.textContent = "Thanks for RSVPing. We can't wait to celebrate with you.";
+      }
+    }
+  }
+</script>
 </body>
-
 </html>
