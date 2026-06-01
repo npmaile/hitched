@@ -247,6 +247,32 @@
 }
 .map-link:hover { opacity: 0.6; }
 
+/* ── ADD TO CALENDAR ── */
+.cal-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cal-btn:hover { background: var(--ink); color: var(--white); }
+
 /* ── RSVP ── */
 .rsvp-outer {
   background: var(--violet);
@@ -596,6 +622,10 @@
       <div class="card-sub">Come as you are.<br>Just come happy.</div>
     </div>
   </div>
+  <div class="cal-row">
+    <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nate+%26+Susanna%3A+Wedding+Reception&dates=20260815T220000Z%2F20260816T010000Z&details=You%27re+invited+to+celebrate+the+wedding+of+Nate+%26+Susanna+Maile%21&location=The+Supermarket%2C+638+N.+Highland+Ave+NE%2C+Atlanta%2C+GA+30306" target="_blank" rel="noopener">↗ Google Calendar</a>
+    <button class="cal-btn" onclick="downloadICS()">↓ Apple / Outlook</button>
+  </div>
 </section>
 
 <!-- VENUE MAP -->
@@ -685,6 +715,29 @@
 </footer>
 
 <script>
+  function downloadICS() {
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Nate & Susanna//Wedding Reception//EN',
+      'BEGIN:VEVENT',
+      'DTSTART:20260815T220000Z',
+      'DTEND:20260816T010000Z',
+      'SUMMARY:Nate & Susanna: Wedding Reception',
+      'LOCATION:The Supermarket\\, 638 N. Highland Ave NE\\, Atlanta\\, GA 30306',
+      'DESCRIPTION:You\'re invited to celebrate the wedding of Nate & Susanna Maile!',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'nate-susanna-reception.ics';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   function launchEmojis(type) {
     const layer = document.createElement('div');
     layer.className = 'emoji-layer';
