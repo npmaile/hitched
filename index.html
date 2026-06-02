@@ -524,27 +524,27 @@
 /* ── PARKING + WAYFINDING ── */
 .parking-outer {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 400px;
   border-top: 2.5px solid var(--ink);
   border-bottom: 2.5px solid var(--ink);
 }
 .parking-content {
   padding: 80px 40px;
-  max-width: 600px;
 }
 .wayfinding-wrap {
   border-left: 2.5px solid var(--ink);
-  background: var(--yellow);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding: 40px 32px;
 }
+.wayfinding-wrap-inner {
+  position: sticky;
+  top: 32px;
+}
 .wayfinding-img {
-  width: 340px;
-  max-width: 100%;
+  width: 100%;
   display: block;
-  border: 2.5px solid var(--ink);
 }
 @media(max-width: 720px) {
   .parking-outer {
@@ -552,14 +552,14 @@
   }
   .parking-content {
     padding: 60px 20px;
-    max-width: none;
   }
   .wayfinding-wrap {
     border-left: none;
     border-top: 2.5px solid var(--ink);
     padding: 32px 20px 40px;
   }
-  .wayfinding-img {
+  .wayfinding-wrap-inner {
+    position: static;
     width: 100%;
   }
 }
@@ -771,12 +771,14 @@
     </div>
   </section>
   <div class="wayfinding-wrap">
-    <img
-      src="/SM_Wayfinding_Portrait.png"
-      alt="Wayfinding map for The Supermarket showing parking options and nearby landmarks in Virginia-Highland"
-      class="wayfinding-img"
-      loading="lazy"
-    >
+    <div class="wayfinding-wrap-inner">
+      <img
+        src="/SM_Wayfinding_Portrait.png"
+        alt="Wayfinding map for The Supermarket showing parking options and nearby landmarks in Virginia-Highland"
+        class="wayfinding-img"
+        loading="lazy"
+      >
+    </div>
   </div>
 </div>
 
