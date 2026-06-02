@@ -164,6 +164,24 @@
   margin-top: 32px;
 }
 
+.rsvp-hero-btn {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 10px 28px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 16px;
+  opacity: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.rsvp-hero-btn:hover { background: transparent; color: var(--ink); }
+
 /* ── SECTION BASE ── */
 .section {
   padding: 80px 40px;
@@ -503,20 +521,47 @@
   display: block;
 }
 
-/* ── WAYFINDING ── */
-.wayfinding-wrap {
+/* ── PARKING + WAYFINDING ── */
+.parking-outer {
+  display: grid;
+  grid-template-columns: 1fr auto;
   border-top: 2.5px solid var(--ink);
   border-bottom: 2.5px solid var(--ink);
+}
+.parking-content {
+  padding: 80px 40px;
+  max-width: 600px;
+}
+.wayfinding-wrap {
+  border-left: 2.5px solid var(--ink);
   background: var(--yellow);
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 40px 32px;
 }
 .wayfinding-img {
-  max-width: 520px;
-  width: 100%;
+  width: 340px;
+  max-width: 100%;
   display: block;
   border: 2.5px solid var(--ink);
+}
+@media(max-width: 720px) {
+  .parking-outer {
+    grid-template-columns: 1fr;
+  }
+  .parking-content {
+    padding: 60px 20px;
+    max-width: none;
+  }
+  .wayfinding-wrap {
+    border-left: none;
+    border-top: 2.5px solid var(--ink);
+    padding: 32px 20px 40px;
+  }
+  .wayfinding-img {
+    width: 100%;
+  }
 }
 
 /* ── PARKING ── */
@@ -592,9 +637,10 @@
   opacity: 0;
   animation: fadeUp 0.6s ease forwards;
 }
-.eyebrow    { animation-delay: 0.05s; }
-.hero-names { animation-delay: 0.18s; }
-.hero-pill  { animation-delay: 0.32s; }
+.eyebrow        { animation-delay: 0.05s; }
+.hero-names     { animation-delay: 0.18s; }
+.hero-pill      { animation-delay: 0.32s; }
+.rsvp-hero-btn  { animation-delay: 0.44s; }
 </style>
 </head>
 <body>
@@ -632,6 +678,7 @@
       <em>Susanna</em>
     </h1>
     <div class="hero-pill">Wedding Reception 🎉</div>
+    <a class="rsvp-hero-btn" href="#rsvp-outer" onclick="document.getElementById('rsvp-outer').scrollIntoView({behavior:'smooth'});return false;">RSVP Now</a>
   </div>
 
   <div class="hero-right" aria-hidden="true">
@@ -694,47 +741,47 @@
   </div>
 </div>
 
-<!-- WAYFINDING MAP -->
-<div class="wayfinding-wrap">
-  <img
-    src="/SM_Wayfinding_Portrait.png"
-    alt="Wayfinding map for The Supermarket showing parking options and nearby landmarks in Virginia-Highland"
-    class="wayfinding-img"
-    loading="lazy"
-  >
+<!-- PARKING + WAYFINDING -->
+<div class="parking-outer">
+  <section class="parking-content" aria-labelledby="parking-lbl">
+    <div class="section-tag" id="parking-lbl">Parking</div>
+    <p style="font-size:15px;line-height:1.7;margin-bottom:36px;">Virginia-Highland street parking is a bit of a sport. Here are your best bets near The Supermarket.</p>
+    <div class="parking-list">
+
+      <div class="parking-item">
+        <div class="parking-name">Shops at Otto's lot</div>
+        <div class="parking-detail">Limited spots on N. Highland Ave in front of The Shops at Otto's. Free for one hour before 6&nbsp;PM, paid after. Register through ParkMobile, Zone&nbsp;3241.</div>
+      </div>
+
+      <div class="parking-item">
+        <div class="parking-name">Otto's Apartment Hotel lot</div>
+        <div class="parking-detail">Small lot at N. Highland and Blue Ridge, beside Otto's Apartment Hotel. ParkMobile, Zone&nbsp;3240. Skip the spots marked "resident only."</div>
+      </div>
+
+      <div class="parking-item">
+        <div class="parking-name">Plaza Theatre lot</div>
+        <div class="parking-detail">Public lot at N. Highland and Ponce, behind and in front of the Plaza Theatre. Look for the "Scan to Pay" signs. Free for 15 minutes, then $5 for the first hour and $1 for each hour after. Open Mon–Sat, 7&nbsp;AM–10&nbsp;PM.</div>
+      </div>
+
+      <div class="parking-item">
+        <div class="parking-name">675 N. Highland deck</div>
+        <div class="parking-detail">Six-story parking deck one block away. $5–$6 for up to two hours, $1 for each additional hour, $14 daily max. Easiest option if you want to set it and forget it.</div>
+      </div>
+
+    </div>
+  </section>
+  <div class="wayfinding-wrap">
+    <img
+      src="/SM_Wayfinding_Portrait.png"
+      alt="Wayfinding map for The Supermarket showing parking options and nearby landmarks in Virginia-Highland"
+      class="wayfinding-img"
+      loading="lazy"
+    >
+  </div>
 </div>
 
-<!-- PARKING SECTION -->
-<section class="section" aria-labelledby="parking-lbl">
-  <div class="section-tag" id="parking-lbl">Parking</div>
-  <p style="font-size:15px;line-height:1.7;max-width:600px;margin-bottom:36px;">Virginia-Highland street parking is a bit of a sport. Here are your best bets near The Supermarket.</p>
-  <div class="parking-list">
-
-    <div class="parking-item">
-      <div class="parking-name">Shops at Otto's lot</div>
-      <div class="parking-detail">Limited spots on N. Highland Ave in front of The Shops at Otto's. Free for one hour before 6&nbsp;PM, paid after. Register through ParkMobile, Zone&nbsp;3241.</div>
-    </div>
-
-    <div class="parking-item">
-      <div class="parking-name">Otto's Apartment Hotel lot</div>
-      <div class="parking-detail">Small lot at N. Highland and Blue Ridge, beside Otto's Apartment Hotel. ParkMobile, Zone&nbsp;3240. Skip the spots marked "resident only."</div>
-    </div>
-
-    <div class="parking-item">
-      <div class="parking-name">Plaza Theatre lot</div>
-      <div class="parking-detail">Public lot at N. Highland and Ponce, behind and in front of the Plaza Theatre. Look for the "Scan to Pay" signs. Free for 15 minutes, then $5 for the first hour and $1 for each hour after. Open Mon–Sat, 7&nbsp;AM–10&nbsp;PM.</div>
-    </div>
-
-    <div class="parking-item">
-      <div class="parking-name">675 N. Highland deck</div>
-      <div class="parking-detail">Six-story parking deck one block away. $5–$6 for up to two hours, $1 for each additional hour, $14 daily max. Easiest option if you want to set it and forget it.</div>
-    </div>
-
-  </div>
-</section>
-
 <!-- RSVP SECTION -->
-<div class="rsvp-outer">
+<div class="rsvp-outer" id="rsvp-outer">
   <div class="rsvp-inner">
     <h2 class="rsvp-heading">Are you<br>coming?!</h2>
     <p class="rsvp-sub">Please respond by August 1, 2026</p>
