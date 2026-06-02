@@ -18,7 +18,7 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-//go:embed *.html *.css robots.txt
+//go:embed *.html *.css robots.txt *.png
 var staticFiles embed.FS
 
 type rsvpPayload struct {
