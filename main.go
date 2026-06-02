@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"crypto/rand"
 	"crypto/subtle"
 	"database/sql"
@@ -46,7 +47,29 @@ var (
 	adminUser string
 	adminPass string
 	sessions  sync.Map // token(string) → expiry(time.Time)
+	htmlCache = map[string][]byte{}
 )
+
+// inferBaseURL builds an absolute base URL from the incoming request,
+// honoring X-Forwarded-Proto so it works behind a TLS-terminating proxy.
+func inferBaseURL(r *http.Request) string {
+	scheme := "https"
+	if proto := r.Header.Get("X-Forwarded-Proto"); proto != "" {
+		scheme = proto
+	} else if r.TLS == nil {
+		scheme = "http"
+	}
+	return scheme + "://" + r.Host
+}
+
+// serveHTML substitutes {{BASE_URL}} in the cached HTML and writes it.
+func serveHTML(name string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		body := bytes.ReplaceAll(htmlCache[name], []byte("{{BASE_URL}}"), []byte(inferBaseURL(r)))
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.Write(body)
+	}
+}
 
 func newToken() string {
 	b := make([]byte, 32)
@@ -121,7 +144,19 @@ func main() {
 		log.Fatalf("create table: %v", err)
 	}
 
+	for _, name := range []string{"index.html", "registry.html", "hotels.html"} {
+		data, err := staticFiles.ReadFile(name)
+		if err != nil {
+			log.Fatalf("read embedded %s: %v", name, err)
+		}
+		htmlCache[name] = data
+	}
+
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /{$}", serveHTML("index.html"))
+	mux.HandleFunc("GET /index.html", serveHTML("index.html"))
+	mux.HandleFunc("GET /registry.html", serveHTML("registry.html"))
+	mux.HandleFunc("GET /hotels.html", serveHTML("hotels.html"))
 	mux.Handle("/", http.FileServer(http.FS(staticFiles)))
 	mux.HandleFunc("POST /api/rsvp", handleRSVP)
 	mux.HandleFunc("GET /admin", handleAdminPage)
