@@ -532,19 +532,18 @@
   padding: 80px 40px;
 }
 .wayfinding-wrap {
-  /* stretch to parking section height; aspect-ratio derives width from that height */
-  aspect-ratio: 4 / 5;
   border-left: 2.5px solid var(--ink);
+  position: relative;
   overflow: hidden;
+  width: 520px; /* overridden by JS to match parking section height × 0.8 */
 }
 .wayfinding-wrap-inner {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  inset: 0;
 }
 .wayfinding-link {
   display: block;
   height: 100%;
-  width: 100%;
   line-height: 0;
 }
 .wayfinding-img {
@@ -561,10 +560,14 @@
     padding: 60px 20px;
   }
   .wayfinding-wrap {
-    aspect-ratio: unset;
+    position: static;
+    width: auto !important;
     border-left: none;
     border-top: 2.5px solid var(--ink);
     padding: 32px 20px 40px;
+  }
+  .wayfinding-wrap-inner {
+    position: static;
   }
   .wayfinding-img {
     width: 100%;
@@ -995,6 +998,17 @@
       showSuccess(fname);
     }
   }
+
+  function sizeWayfinding() {
+    if (window.innerWidth <= 720) return;
+    const parking = document.querySelector('.parking-content');
+    const wrap = document.querySelector('.wayfinding-wrap');
+    if (parking && wrap) {
+      wrap.style.width = Math.round(parking.offsetHeight * 4 / 5) + 'px';
+    }
+  }
+  sizeWayfinding();
+  window.addEventListener('resize', sizeWayfinding);
 
   function showSuccess(fname) {
     document.getElementById('rsvp-form').style.display = 'none';
