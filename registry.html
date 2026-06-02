@@ -133,26 +133,13 @@
 
 .art-item {
   display: grid;
-  grid-template-columns: 72px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 0;
   border-bottom: 2.5px solid var(--ink);
   align-items: stretch;
   transition: background 0.15s;
 }
 .art-item:hover { background: var(--yellow); }
-
-.art-num {
-  font-family: 'Fraunces', serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(26,16,8,0.3);
-  padding: 28px 0 28px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 2.5px solid var(--ink);
-}
 
 .art-body {
   padding: 28px 28px 28px 28px;
@@ -216,10 +203,9 @@
 }
 
 @media(max-width:560px){
-  .art-item { grid-template-columns: 40px 1fr; }
+  .art-item { grid-template-columns: 1fr; }
   .art-meta { display: none; }
   .art-body { border-right: none; }
-  .art-num  { font-size: 10px; }
 }
 
 /* ── CLOSER ── */
@@ -291,7 +277,6 @@
 <div class="art-list">
 
   <div class="art-item">
-    <div class="art-num">01</div>
     <div class="art-body">
       <div class="art-title">A handwritten letter or poem</div>
       <div class="art-desc">Write us something. A memory, a wish, a terrible limerick. Whatever you want. We'll frame it.</div>
@@ -304,7 +289,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">02</div>
     <div class="art-body">
       <div class="art-title">A pressed flower arrangement</div>
       <div class="art-desc">Pick flowers, press them in a book for a week, arrange them on cardstock or in a frame. Simple and beautiful.</div>
@@ -317,7 +301,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">03</div>
     <div class="art-body">
       <div class="art-title">A printed photo of you and us</div>
       <div class="art-desc">Pick a favorite photo of the three (or more) of you, get it printed big, and drop it in a nice frame. Done.</div>
@@ -330,7 +313,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">04</div>
     <div class="art-body">
       <div class="art-title">A watercolor painting</div>
       <div class="art-desc">Grab a cheap watercolor set and paint anything: a place we both love, our dog, an abstract blob. Beginner work is charming, not embarrassing, we promise.</div>
@@ -343,7 +325,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">05</div>
     <div class="art-body">
       <div class="art-title">A hand-thrown or hand-built ceramic piece</div>
       <div class="art-desc">Many pottery studios offer open studio time or one-day workshops. Make us a mug, a bowl, a lopsided vase. We will use it every day.</div>
@@ -356,7 +337,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">06</div>
     <div class="art-body">
       <div class="art-title">An embroidered hoop or textile piece</div>
       <div class="art-desc">Embroider our names, a date, a flower, a little scene. Hoop art is beginner-friendly and ends up looking incredible hung on a wall.</div>
@@ -369,7 +349,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">07</div>
     <div class="art-body">
       <div class="art-title">A screen print or linocut print</div>
       <div class="art-desc">Carve a simple image into a linoleum block and print it on paper or fabric. Many print shops offer one-day intro classes. Edition of one, just for us.</div>
@@ -382,7 +361,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">08</div>
     <div class="art-body">
       <div class="art-title">A framed original drawing or illustration</div>
       <div class="art-desc">Draw us something: a portrait, a pet, a place, something weird. Ink, pencil, marker, charcoal. Frame it nicely and it becomes a real piece of art.</div>
@@ -395,7 +373,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">09</div>
     <div class="art-body">
       <div class="art-title">A book you love</div>
       <div class="art-desc">Buy us a copy of a book that means something to you — a novel, a poetry collection, whatever. Write a note inside about why you love it. We want our shelves to reflect the people in our lives.</div>
@@ -408,7 +385,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">10</div>
     <div class="art-body">
       <div class="art-title">A large acrylic or oil painting</div>
       <div class="art-desc">Abstract, landscape, portrait, anything goes. Even if you've never painted before, a large piece with intentional color choices will look stunning above a couch.</div>
@@ -421,7 +397,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">11</div>
     <div class="art-body">
       <div class="art-title">A hand-welded or woodworked object</div>
       <div class="art-desc">A small shelf, a coat hook, a sculptural piece in metal or wood. If you make things with your hands, make us something. We will treasure it.</div>
@@ -434,7 +409,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">13</div>
     <div class="art-body">
       <div class="art-title">A hand-woven textile or tapestry</div>
       <div class="art-desc">A woven wall hanging, a small rug, a lap blanket. Weaving is meditative and the finished piece looks incredible. It's a real commitment, and we know it. That's exactly why it would mean so much.</div>
@@ -447,7 +421,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">14</div>
     <div class="art-body">
       <div class="art-title">A large-scale portrait or mural painting</div>
       <div class="art-desc">A serious, finished painting of us, our home, somewhere meaningful, or something entirely your own. Big canvas, real effort. The kind of thing we put above the fireplace and explain to every person who visits for the rest of our lives.</div>
@@ -472,7 +445,6 @@
 <div class="art-list">
 
   <div class="art-item">
-    <div class="art-num">15</div>
     <div class="art-body">
       <div class="art-title">Cash or Venmo</div>
       <div class="art-desc">If you want to pitch in on something big — a trip, furniture, the general adventure of starting out — cash or Venmo works great. Just reach out and we'll send you details.</div>
@@ -485,7 +457,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">16</div>
     <div class="art-body">
       <div class="art-title">A restaurant gift card</div>
       <div class="art-desc">A gift card to a great restaurant near us means a date night we'll actually use. Good food, your treat.</div>
@@ -498,7 +469,6 @@
   </div>
 
   <div class="art-item">
-    <div class="art-num">17</div>
     <div class="art-body">
       <div class="art-title">Tickets to something</div>
       <div class="art-desc">A show, a concert, a comedy night, a game — we'd rather have a memory than another thing to find a shelf for.</div>
