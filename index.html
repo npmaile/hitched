@@ -535,7 +535,7 @@
   border-left: 2.5px solid var(--ink);
   position: relative;
   overflow: hidden;
-  width: 520px; /* overridden by JS to match parking section height × 0.8 */
+  /* width set entirely by JS */
 }
 .wayfinding-wrap-inner {
   position: absolute;
@@ -1000,12 +1000,17 @@
   }
 
   function sizeWayfinding() {
-    if (window.innerWidth <= 720) return;
     const parking = document.querySelector('.parking-content');
     const wrap = document.querySelector('.wayfinding-wrap');
-    if (parking && wrap) {
-      wrap.style.width = Math.round(parking.offsetHeight * 4 / 5) + 'px';
+    if (!parking || !wrap) return;
+    if (window.innerWidth <= 720) {
+      wrap.style.width = '';
+      return;
     }
+    // Collapse wrap to 0 so parking takes its full natural width before measuring
+    wrap.style.width = '0px';
+    const h = parking.offsetHeight;
+    wrap.style.width = Math.round(h * 4 / 5) + 'px';
   }
   sizeWayfinding();
   window.addEventListener('resize', sizeWayfinding);
