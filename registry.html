@@ -74,18 +74,12 @@
 }
 
 .statement-deco {
-  background: var(--white);
+  background: var(--pink);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
-.deco-big {
-  font-size: clamp(100px, 14vw, 160px);
-  line-height: 1;
-  user-select: none;
-  filter: drop-shadow(0 4px 0 rgba(26,16,8,0.15));
 }
 .deco-shape {
   position: absolute;
@@ -93,8 +87,12 @@
   border-radius: 50%;
   pointer-events: none;
 }
-.deco-shape-1 { width: 110px; height: 110px; background: var(--yellow); top: 10%; right: 8%; }
-.deco-shape-2 { width: 60px;  height: 60px;  background: var(--lime);   bottom: 15%; left: 10%; }
+.deco-shape-1 { width: 140px; height: 140px; background: var(--yellow); top: 8%;   right: 10%; }
+.deco-shape-2 { width: 70px;  height: 70px;  background: var(--lime);   bottom: 12%; left: 8%; }
+.deco-shape-3 { width: 48px;  height: 48px;  background: var(--coral);  top: 44%;  left: 20%; }
+.deco-shape-4 { width: 90px;  height: 90px;  background: var(--violet); bottom: 20%; right: 16%; }
+.deco-shape-5 { width: 30px;  height: 30px;  background: var(--white);  top: 18%;  left: 38%; }
+.deco-shape-6 { width: 55px;  height: 55px;  background: var(--sky);    bottom: 38%; left: 12%; }
 
 /* ── TIER INTRO ── */
 .tier-intro {
@@ -266,7 +264,10 @@
   <div class="statement-deco" aria-hidden="true">
     <div class="deco-shape deco-shape-1"></div>
     <div class="deco-shape deco-shape-2"></div>
-    <div class="deco-big">🎨</div>
+    <div class="deco-shape deco-shape-3"></div>
+    <div class="deco-shape deco-shape-4"></div>
+    <div class="deco-shape deco-shape-5"></div>
+    <div class="deco-shape deco-shape-6"></div>
   </div>
 </div>
 
