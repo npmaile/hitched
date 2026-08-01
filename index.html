@@ -610,6 +610,68 @@
   max-width: 620px;
 }
 
+/* ── FIND US (ENTRANCES) ── */
+.findus-outer {
+  border-bottom: 2.5px solid var(--ink);
+  padding: 80px 40px;
+}
+.findus-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+.findus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2.5px solid var(--ink);
+}
+.findus-item {
+  display: flex;
+  flex-direction: column;
+  border-right: 2.5px solid var(--ink);
+}
+.findus-item:last-child { border-right: none; }
+.findus-photo-wrap {
+  border-bottom: 2.5px solid var(--ink);
+  line-height: 0;
+}
+.findus-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+.findus-body {
+  padding: 24px 28px;
+  flex: 1;
+}
+.findus-item:nth-child(odd) .findus-body { background: var(--sky); }
+.findus-item:nth-child(even) .findus-body { background: var(--lime); }
+.findus-name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.findus-detail {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+@media(max-width: 720px) {
+  .findus-outer { padding: 60px 20px; }
+  .findus-grid { grid-template-columns: 1fr; }
+  .findus-item {
+    border-right: none;
+    border-bottom: 2.5px solid var(--ink);
+  }
+  .findus-item:last-child { border-bottom: none; }
+  .findus-photo { height: 220px; }
+}
+
 /* ── EMOJI ANIMATION ── */
 .emoji-layer {
   position: fixed;
@@ -753,7 +815,7 @@
 <!-- VENUE MAP -->
 <div class="map-section">
   <div class="map-info">
-    <div class="section-tag">Find Us</div>
+    <div class="section-tag">The Venue</div>
     <div class="map-address-main"><a class="venue-link" href="https://www.thesupermarketatl.com/" target="_blank" rel="noopener">The Supermarket</a></div>
     <div class="map-address-sub">638 N. Highland Ave NE<br>Atlanta, GA 30306<br>Virginia-Highland neighborhood</div>
     <div class="map-actions">
@@ -813,6 +875,45 @@
         >
       </a>
     </div>
+  </div>
+</div>
+
+<!-- FIND US (ENTRANCES) -->
+<div class="findus-outer">
+  <div class="section-tag" id="findus-lbl">Find Us</div>
+  <p class="findus-intro">Once you've parked, here's how to get to the door.</p>
+  <div class="findus-grid">
+
+    <div class="findus-item">
+      <div class="findus-photo-wrap">
+        <img
+          src="/entrance-main.jpg"
+          alt="The Supermarket's main entrance door at 638 N. Highland Ave NE, between Big Softie and Collette Bakeshop"
+          class="findus-photo"
+          loading="lazy"
+        >
+      </div>
+      <div class="findus-body">
+        <div class="findus-name">Main Entrance</div>
+        <div class="findus-detail">The Supermarket's main entrance is located at 638 N. Highland Ave NE. Our door is in between Big Softie and Collette Bakeshop, leading you down a hallway and a staircase.</div>
+      </div>
+    </div>
+
+    <div class="findus-item">
+      <div class="findus-photo-wrap">
+        <img
+          src="/entrance-courtyard.jpg"
+          alt="Decorative black metal courtyard entrance door in the middle of Otto's parking lot"
+          class="findus-photo"
+          loading="lazy"
+        >
+      </div>
+      <div class="findus-body">
+        <div class="findus-name">Courtyard Entrance</div>
+        <div class="findus-detail">Need less stairs? Use our secondary entrance in the middle of Otto's parking lot. The decorative black metal door leads you through a courtyard. Be quiet when leaving events this way after dark — this is a residential courtyard. Note this entrance has a few stairs.</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
